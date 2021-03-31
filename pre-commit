@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+git stash -q --keep-index
+./gradlew build
+SUCCESS=$?
+git stash pop -q
+exit $SUCCESS

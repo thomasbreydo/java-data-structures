@@ -21,3 +21,5 @@ test {
         events "passed", "skipped", "failed"
     }
 }
+
+apply from: rootProject.file("gradle/install-git-hooks.gradle")
