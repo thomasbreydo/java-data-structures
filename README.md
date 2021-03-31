@@ -5,8 +5,6 @@ project is to practice by implementing them.
 
 ## To-do
 
-- Singly-linked list
-
 - Doubly-linked list
 
 - Stack
@@ -19,9 +17,10 @@ project is to practice by implementing them.
 
 - Heap
 
-[comment]: <> (## Completed)
+## Completed
 
-[comment]: <> (- )
+- Singly-linked
+  list: [source](src/main/java/com/thomasbreydo/datastructures/SinglyLinkedList.java)
 
 ## License
 
