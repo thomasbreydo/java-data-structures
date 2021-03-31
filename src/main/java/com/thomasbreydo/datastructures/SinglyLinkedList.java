@@ -220,7 +220,7 @@ public class SinglyLinkedList<E> implements Collection<E> {
     return true;
   }
 
-  SinglyLinkedListNodeItr<E> nodeIterator() {
+  Iterator<Node<E>> nodeIterator() {
     return new SinglyLinkedListNodeItr<>(this);
   }
 
@@ -319,94 +319,94 @@ public class SinglyLinkedList<E> implements Collection<E> {
     tail = null;
     length = 0;
   }
-}
 
-class SinglyLinkedListItr<E> implements Iterator<E> {
-  private final SinglyLinkedListNodeItr<E> nodeItr;
+  static class SinglyLinkedListItr<E> implements Iterator<E> {
+    private final Iterator<Node<E>> NODE_ITR;
 
-  SinglyLinkedListItr(SinglyLinkedList<E> list) {
-    nodeItr = list.nodeIterator();
-  }
-
-  @Override
-  public boolean hasNext() {
-    return nodeItr.hasNext();
-  }
-
-  @Override
-  public E next() {
-    return nodeItr.next().item;
-  }
-
-  /**
-   * @throws IllegalStateException if {@code next()} has not been called since last call to {@code
-   *     remove()}.
-   */
-  @Override
-  public void remove() {
-    nodeItr.remove();
-  }
-}
-
-class SinglyLinkedListNodeItr<E> implements Iterator<Node<E>> {
-  private final SinglyLinkedList<E> list;
-  private int nRemaining;
-  private Node<E> next;
-  private Node<E> current = null;
-  private Node<E> prev = null;
-  private boolean removed;
-
-  SinglyLinkedListNodeItr(SinglyLinkedList<E> list) {
-    nRemaining = list.length;
-    next = list.head;
-    this.list = list;
-  }
-
-  @Override
-  public boolean hasNext() {
-    return nRemaining > 0;
-  }
-
-  /** @return the next node in the underlying linked list. */
-  @Override
-  public Node<E> next() {
-    prev = current;
-    current = next;
-    next = next.next;
-    --nRemaining;
-    removed = false;
-    return current;
-  }
-
-  /**
-   * @throws IllegalStateException if {@code next()} has not been called since last call to {@code
-   *     remove}
-   */
-  @Override
-  public void remove() {
-    if (removed) {
-      throw new IllegalStateException();
+    SinglyLinkedListItr(SinglyLinkedList<E> list) {
+      NODE_ITR = list.nodeIterator();
     }
-    if (current == list.head) {
-      list.head = list.head.next;
+
+    @Override
+    public boolean hasNext() {
+      return NODE_ITR.hasNext();
     }
-    if (current == list.tail) {
-      list.tail = prev;
+
+    @Override
+    public E next() {
+      return NODE_ITR.next().item;
     }
-    if (prev != null) {
-      prev.next = next;
+
+    /**
+     * @throws IllegalStateException if {@code next()} has not been called since last call to {@code
+     *     remove()}.
+     */
+    @Override
+    public void remove() {
+      NODE_ITR.remove();
     }
-    --list.length;
-    removed = true;
   }
-}
 
-class Node<E> {
-  E item;
-  Node<E> next;
+  static class SinglyLinkedListNodeItr<E> implements Iterator<Node<E>> {
+    private final SinglyLinkedList<E> LIST;
+    private int nRemaining;
+    private Node<E> next;
+    private Node<E> current = null;
+    private Node<E> prev = null;
+    private boolean removed;
 
-  Node(E item, Node<E> next) {
-    this.item = item;
-    this.next = next;
+    SinglyLinkedListNodeItr(SinglyLinkedList<E> LIST) {
+      nRemaining = LIST.length;
+      next = LIST.head;
+      this.LIST = LIST;
+    }
+
+    @Override
+    public boolean hasNext() {
+      return nRemaining > 0;
+    }
+
+    /** @return the next node in the underlying linked list. */
+    @Override
+    public Node<E> next() {
+      prev = current;
+      current = next;
+      next = next.next;
+      --nRemaining;
+      removed = false;
+      return current;
+    }
+
+    /**
+     * @throws IllegalStateException if {@code next()} has not been called since last call to {@code
+     *     remove}
+     */
+    @Override
+    public void remove() {
+      if (removed) {
+        throw new IllegalStateException();
+      }
+      if (current == LIST.head) {
+        LIST.head = LIST.head.next;
+      }
+      if (current == LIST.tail) {
+        LIST.tail = prev;
+      }
+      if (prev != null) {
+        prev.next = next;
+      }
+      --LIST.length;
+      removed = true;
+    }
+  }
+
+  static class Node<E> {
+    E item;
+    Node<E> next;
+
+    Node(E item, Node<E> next) {
+      this.item = item;
+      this.next = next;
+    }
   }
 }
