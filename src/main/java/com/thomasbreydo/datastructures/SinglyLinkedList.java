@@ -220,7 +220,7 @@ public class SinglyLinkedList<E> implements Collection<E> {
     return true;
   }
 
-  private SinglyLinkedListNodeItr<E> nodeIterator() {
+  SinglyLinkedListNodeItr<E> nodeIterator() {
     return new SinglyLinkedListNodeItr<>(this);
   }
 
@@ -233,8 +233,8 @@ public class SinglyLinkedList<E> implements Collection<E> {
   @Override
   public boolean remove(Object o) {
     // O(length)
-    for (SinglyLinkedListNodeItr<E> iterator = nodeIterator(); iterator.hasNext(); ) {
-      if (Objects.equals(iterator.next().item, o)) {
+    for (Iterator<E> iterator = iterator(); iterator.hasNext(); ) {
+      if (Objects.equals(iterator.next(), o)) {
         iterator.remove();
         return true;
       }
@@ -285,8 +285,8 @@ public class SinglyLinkedList<E> implements Collection<E> {
   public boolean removeAll(Collection<?> c) {
     // O(length) * O(x) where c.contains() is O(x)
     boolean modified = false;
-    for (SinglyLinkedListNodeItr<E> iterator = nodeIterator(); iterator.hasNext(); ) {
-      if (c.contains(iterator.next().item)) {
+    for (Iterator<E> iterator = iterator(); iterator.hasNext(); ) {
+      if (c.contains(iterator.next())) {
         iterator.remove();
         modified = true;
       }
@@ -304,8 +304,8 @@ public class SinglyLinkedList<E> implements Collection<E> {
   public boolean retainAll(Collection<?> c) {
     // O(length) * O(x) where c.contains() is O(x)
     boolean modified = false;
-    for (SinglyLinkedListNodeItr<E> iterator = nodeIterator(); iterator.hasNext(); ) {
-      if (!c.contains(iterator.next().item)) {
+    for (Iterator<E> iterator = iterator(); iterator.hasNext(); ) {
+      if (!c.contains(iterator.next())) {
         iterator.remove();
         modified = true;
       }
@@ -322,25 +322,29 @@ public class SinglyLinkedList<E> implements Collection<E> {
 }
 
 class SinglyLinkedListItr<E> implements Iterator<E> {
-  private int nRemaining;
-  private Node<E> current;
+  private final SinglyLinkedListNodeItr<E> nodeItr;
 
   SinglyLinkedListItr(SinglyLinkedList<E> list) {
-    nRemaining = list.length;
-    current = list.head;
+    nodeItr = list.nodeIterator();
   }
 
   @Override
   public boolean hasNext() {
-    return nRemaining > 0;
+    return nodeItr.hasNext();
   }
 
   @Override
   public E next() {
-    E item = current.item;
-    current = current.next;
-    --nRemaining;
-    return item;
+    return nodeItr.next().item;
+  }
+
+  /**
+   * @throws IllegalStateException if {@code next()} has not been called since last call to {@code
+   *     remove()}.
+   */
+  @Override
+  public void remove() {
+    nodeItr.remove();
   }
 }
 
