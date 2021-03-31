@@ -1,6 +1,9 @@
 # Data Structures in Java
 
-To-do:
+Yes, these structures exist as built-in Java objects. The purpose of this
+project is to practice by implementing them.
+
+## To-do
 
 - Singly-linked list
 
@@ -14,6 +17,13 @@ To-do:
 
 - Hashmap
 
-[comment]: <> (Complete:)
+- Heap
+
+[comment]: <> (## Completed)
 
 [comment]: <> (- )
+
+## License
+
+[MIT](LICENSE)
+
