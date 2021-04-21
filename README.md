@@ -5,8 +5,6 @@ project is to practice by implementing them.
 
 ## To-do
 
-- Doubly-linked list
-
 - Stack
 
 - Queue
@@ -18,6 +16,21 @@ project is to practice by implementing them.
 - Heap
 
 ## Completed
+
+### Doubly-linked list
+
+- View
+  my [source file.](src/main/java/com/thomasbreydo/datastructures/DoublyLinkedList.java)
+
+- View
+  my [unit tests.](src/test/java/com/thomasbreydo/datastructures/DoublyLinkedListTest.java)
+
+Unlike singly-linked nodes, doubly-linked nodes keep track of their
+predecessor (in addition to their successor). This makes reverse traversal an
+operation that runs in O(1) time. It also allows for much more concise code
+because it eliminates the need to keep track of the preceding node while
+iterating over the list (once the target is found, it stores a pointer to the
+previous node).
 
 ### Singly-linked list
 
