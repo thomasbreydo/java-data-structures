@@ -3,7 +3,9 @@ package com.thomasbreydo.datastructures;
 import java.util.EmptyStackException;
 
 public class Stack<E> extends DoublyLinkedList<E> {
-  Stack() {}
+  Stack() {
+    super();
+  }
 
   /**
    * Returns {@code true} if this stack has no elements.
@@ -11,7 +13,7 @@ public class Stack<E> extends DoublyLinkedList<E> {
    * @return {@code true} if this stack has no elements.
    */
   public boolean empty() {
-    return size == 0;
+    return isEmpty();
   }
 
   /**
@@ -23,12 +25,6 @@ public class Stack<E> extends DoublyLinkedList<E> {
     add(item);
   }
 
-  void checkNotEmpty() {
-    if (size == 0) {
-      throw new EmptyStackException();
-    }
-  }
-
   /**
    * Removes the object at the top of this stack and returns that object as the value of this
    * function.
@@ -37,7 +33,7 @@ public class Stack<E> extends DoublyLinkedList<E> {
    * @throws EmptyStackException if this stack is empty.
    */
   public E pop() {
-    checkNotEmpty();
+    if (isEmpty()) throw new EmptyStackException();
     return remove(size - 1);
   }
 
@@ -48,7 +44,7 @@ public class Stack<E> extends DoublyLinkedList<E> {
    * @throws EmptyStackException if this stack is empty.
    */
   public E peek() {
-    checkNotEmpty();
+    if (isEmpty()) throw new EmptyStackException();
     return get(size - 1);
   }
 }
