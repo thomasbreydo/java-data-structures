@@ -5,8 +5,6 @@ project is to practice by implementing them.
 
 ## To-do
 
-- Queue
-
 - Set
 
 - Hashmap
@@ -14,6 +12,18 @@ project is to practice by implementing them.
 - Heap
 
 ## Completed
+
+### Queue
+
+- View
+  my [source file.](src/main/java/com/thomasbreydo/datastructures/FIFO.java)
+
+- View
+  my [unit tests.](src/test/java/com/thomasbreydo/datastructures/FIFOTest.java)
+
+The queue (`FIFO`) also simple to implement as a subclass of `DoublyLinkedList`.
+All four stack operations (`offer`, `remove`, `poll`, `element`, `peek`) have
+runtime O(1) by design.
 
 ### Stack
 
@@ -23,8 +33,9 @@ project is to practice by implementing them.
 - View
   my [unit tests.](src/test/java/com/thomasbreydo/datastructures/LinkedStackTest.java)
 
-The stack was simple to implement as a subclass of `DoublyLinkedList`. All four
-stack operations (`push`, `pop`, `peek`, `empty`) are O(1) by design.
+The stack was also simple to implement as a subclass of `DoublyLinkedList`. All
+four stack operations (`push`, `pop`, `peek`
+, `empty`) have runtime O(1) by design.
 
 ### Doubly-linked list
 
