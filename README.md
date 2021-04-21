@@ -5,8 +5,6 @@ project is to practice by implementing them.
 
 ## To-do
 
-- Stack
-
 - Queue
 
 - Set
@@ -16,6 +14,17 @@ project is to practice by implementing them.
 - Heap
 
 ## Completed
+
+### Stack
+
+- View
+  my [source file.](src/main/java/com/thomasbreydo/datastructures/LinkedStack.java)
+
+- View
+  my [unit tests.](src/test/java/com/thomasbreydo/datastructures/LinkedStackTest.java)
+
+The stack was simple to implement as a subclass of `DoublyLinkedList`. All four
+stack operations (`push`, `pop`, `peek`, `empty`) are O(1) by design.
 
 ### Doubly-linked list
 
@@ -30,7 +39,7 @@ predecessor (in addition to their successor). This makes reverse traversal an
 operation that runs in O(1) time. It also allows for much more concise code
 because it eliminates the need to keep track of the preceding node while
 iterating over the list (once the target is found, it stores a pointer to the
-previous node).
+previous node). Searching for an element or indexing is still O(n).
 
 ### Singly-linked list
 

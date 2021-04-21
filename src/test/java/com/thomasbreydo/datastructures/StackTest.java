@@ -7,12 +7,12 @@ import java.util.EmptyStackException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LinkedStackTest {
-  LinkedStack<Integer> stack;
+class StackTest {
+  Stack<Integer> stack;
 
   @BeforeEach
   void setUp() {
-    stack = new LinkedStack<>();
+    stack = new Stack<>();
   }
 
   @Test

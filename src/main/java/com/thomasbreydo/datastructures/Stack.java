@@ -2,8 +2,8 @@ package com.thomasbreydo.datastructures;
 
 import java.util.EmptyStackException;
 
-public class LinkedStack<E> extends DoublyLinkedList<E> {
-  LinkedStack() {}
+public class Stack<E> extends DoublyLinkedList<E> {
+  Stack() {}
 
   /**
    * Returns {@code true} if this stack has no elements.
