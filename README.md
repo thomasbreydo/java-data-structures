@@ -22,9 +22,8 @@ project is to practice by implementing them.
   my [unit tests.](src/test/java/com/thomasbreydo/datastructures/FIFOTest.java)
 
 The queue (`FIFO`) is implemented as a subclass of `DoublyLinkedList`. All five
-queue operations (`offer`, `remove`, `poll`, `element`, `peek`) have runtime O(
-
-1) by design.
+queue operations (`offer`, `remove`, `poll`, `element`, `peek`)
+have runtime O(1) by design.
 
 ### Stack
 
