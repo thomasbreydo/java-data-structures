@@ -23,6 +23,7 @@ project is to practice by implementing them.
 
 The queue (`FIFO`) is implemented as a subclass of `DoublyLinkedList`. All five
 queue operations (`offer`, `remove`, `poll`, `element`, `peek`) have runtime O(
+
 1) by design.
 
 ### Stack
@@ -34,8 +35,8 @@ queue operations (`offer`, `remove`, `poll`, `element`, `peek`) have runtime O(
   my [unit tests.](src/test/java/com/thomasbreydo/datastructures/StackTest.java)
 
 The stack is implemented as a subclass of `DoublyLinkedList`. All four stack
-operations (`push`, `pop`, `peek`
-, `empty`) have runtime O(1) by design.
+operations (`push`, `pop`, `peek`, `empty`)
+have runtime O(1) by design.
 
 ### Doubly-linked list
 
