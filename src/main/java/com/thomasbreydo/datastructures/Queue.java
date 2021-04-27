@@ -1,15 +1,14 @@
 package com.thomasbreydo.datastructures;
 
 import java.util.NoSuchElementException;
-import java.util.Queue;
 
 /**
  * First-in-first-out data structure.
  *
  * @param <E> element type
  */
-public class FIFO<E> extends DoublyLinkedList<E> implements Queue<E> {
-  FIFO() {
+public class Queue<E> extends DoublyLinkedList<E> implements java.util.Queue<E> {
+  Queue() {
     super();
   }
 

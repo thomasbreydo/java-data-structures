@@ -16,13 +16,13 @@ project is to practice by implementing them.
 ### Queue
 
 - View
-  my [source file.](src/main/java/com/thomasbreydo/datastructures/FIFO.java)
+  my [source file.](src/main/java/com/thomasbreydo/datastructures/Queue.java)
 
 - View
-  my [unit tests.](src/test/java/com/thomasbreydo/datastructures/FIFOTest.java)
+  my [unit tests.](src/test/java/com/thomasbreydo/datastructures/QueueTest.java)
 
-The queue (`FIFO`) is implemented as a subclass of `DoublyLinkedList`. All five
-queue operations (`offer`, `remove`, `poll`, `element`, `peek`)
+The queue is implemented as a subclass of `DoublyLinkedList`. All five queue
+operations (`offer`, `remove`, `poll`, `element`, `peek`)
 have runtime O(1) by design.
 
 ### Stack

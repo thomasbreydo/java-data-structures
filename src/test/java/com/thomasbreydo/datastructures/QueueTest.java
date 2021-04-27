@@ -7,13 +7,13 @@ import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FIFOTest {
+class QueueTest {
 
-  FIFO<Integer> queue;
+  Queue<Integer> queue;
 
   @BeforeEach
   void setUp() {
-    queue = new FIFO<>();
+    queue = new Queue<>();
   }
 
   @Test
