@@ -2,6 +2,11 @@ package com.thomasbreydo.datastructures;
 
 import java.util.EmptyStackException;
 
+/**
+ * Last-in-first-out data structure.
+ *
+ * @param <E> element type
+ */
 public class Stack<E> extends DoublyLinkedList<E> {
   Stack() {
     super();
@@ -19,7 +24,7 @@ public class Stack<E> extends DoublyLinkedList<E> {
   /**
    * Adds {@code item} to the top of the stack.
    *
-   * @param item
+   * @param item item to add
    */
   public void push(E item) {
     add(item);

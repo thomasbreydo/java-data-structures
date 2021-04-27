@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 /**
- * Singly-linked list, where each element is stored as a node that points to the next element.
+ * Singly-linked list, where each element is stored as a node that points its successor.
  *
  * @param <E> the type of the elements this linked list stores.
  */
@@ -14,7 +14,11 @@ public class SinglyLinkedList<E> implements Collection<E>, List<E> {
   int size = 0;
   /** Create a new instance of a singly-linked list with no elements. */
   public SinglyLinkedList() {}
-  /** Create a new instance of a singly-linked list with no elements. */
+  /**
+   * Create a new instance of a singly-linked list with no elements.
+   *
+   * @param elements elements to add to this new list
+   */
   @SafeVarargs
   public SinglyLinkedList(E... elements) {
     for (E e : elements) {

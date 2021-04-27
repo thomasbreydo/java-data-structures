@@ -3,6 +3,12 @@ package com.thomasbreydo.datastructures;
 import java.lang.reflect.Array;
 import java.util.*;
 
+/**
+ * Doubly-linked list, where each element is stored as a node that points to both its successor and
+ * its predecessor.
+ *
+ * @param <E> element type
+ */
 public class DoublyLinkedList<E> implements List<E>, Collection<E> {
   int size = 0;
   Node<E> head = null;
@@ -558,8 +564,6 @@ public class DoublyLinkedList<E> implements List<E>, Collection<E> {
    * the returned list are reflected in this list, and vice-versa. The returned list supports all of
    * the optional list operations supported by this list.
    *
-   * <p>
-   *
    * <p>This method eliminates the need for explicit range operations (of the sort that commonly
    * exist for arrays). Any operation that expects a list can be used as a range operation by
    * passing a subList view instead of a whole list. For example, the following idiom removes a
@@ -571,8 +575,6 @@ public class DoublyLinkedList<E> implements List<E>, Collection<E> {
    *
    * Similar idioms may be constructed for {@code indexOf} and {@code lastIndexOf}, and all of the
    * algorithms in the {@code Collections} class can be applied to a subList.
-   *
-   * <p>
    *
    * <p>The semantics of the list returned by this method become undefined if the backing list
    * (i.e., this list) is <i>structurally modified</i> in any way other than via the returned list.
