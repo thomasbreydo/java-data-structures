@@ -81,8 +81,7 @@ public class Map<K, V> {
    *
    * @param key the key
    * @param value the value
-   * @return {@code null} the old value if {@code key} was present in the map, otherwise {@code
-   *     null}.
+   * @return the old value if {@code key} was present in the map, otherwise {@code null}.
    */
   public V insert(K key, V value) {
     if ((double) (size + 1) / capacity > loadFactor) {
