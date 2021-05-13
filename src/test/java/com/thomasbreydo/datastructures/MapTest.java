@@ -67,4 +67,16 @@ class MapTest {
     assertTrue(m.hasKey(9));
     assertTrue(m.hasKey(null));
   }
+
+  @Test
+  void delete() {
+    assertFalse(m.delete(null));
+    assertFalse(m.delete(0));
+    m.insert(0, null);
+    assertEquals(1, m.size);
+    assertFalse(m.delete(null));
+    assertEquals(1, m.size);
+    assertTrue(m.delete(0));
+    assertEquals(0, m.size);
+  }
 }
