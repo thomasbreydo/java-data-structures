@@ -5,11 +5,21 @@ project is to practice by implementing them.
 
 ## To-do
 
-- Set
-
 - Heap
 
 ## Completed
+
+### Set
+
+- View my [source file](src/main/java/com/thomasbreydo/datastructures/Set.java).
+
+- View
+  my [unit tests](src/test/java/com/thomasbreydo/datastructures/SetTest.java).
+
+The set is backed by a `Map` that stores elements as keys and sets all values to
+be `false`. This is actually how the Java `HashSet` works! As with the hash-map,
+all three set operations (`insert`, `contains`, `delete`) have runtime O(1) by
+design.
 
 ### Map
 
