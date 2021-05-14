@@ -3,12 +3,6 @@
 Yes, these structures exist as built-in Java objects. The purpose of this
 project is to practice by implementing them.
 
-## To-do
-
-- Heap
-
-## Completed
-
 ### Set
 
 - View my [source file](src/main/java/com/thomasbreydo/datastructures/Set.java).
